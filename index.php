@@ -54,5 +54,6 @@
         }
     ?>
     
+    <!-- http://localhost/bcesercizi/php-snacks-blocco-1/index.php/?name=afffff&mail=adriana@posta.it&age=10 -->
 </body>
 </html>
