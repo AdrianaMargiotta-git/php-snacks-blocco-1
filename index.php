@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Snacks 2</title>
+
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #FBCEB1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+    </style>
+
 </head>
 <body>
     <!-- Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che:
@@ -18,30 +31,18 @@
         $mail = $_GET['mail'];
         $age = $_GET['age'];
 
+        $nameV = strlen($name) > 3 == true;
+        $mailV = (strpos ($mail, '@') !== false && strpos ($mail, '.') !== false) == true;
+        $ageV = is_numeric($age) == true;
+
     ?>
 
     <?php
-
-        if (strlen($name) > 3) {
-            echo 'Accesso riuscito';
+        if (strlen($name) > 3 && strpos ($mail, '@') !== false && strpos ($mail, '.') !== false && is_numeric($age) == true) {
+            echo "<h1 style='font-size:2rem;color:green;'>Accesso consentito</h1>";
         } else {
-            echo 'Accesso negato';
-        };
-
-        if (strpos ($mail, '@') !== false && strpos ($mail, '.') !== false) {
-            echo 'OK';
-        } else {
-            echo 'KO';
-        };
-
-        if (is_numeric($age) == true) {
-            echo 'Accesso riuscito';
-        } else {
-            echo 'Accesso negato';
+            echo "<h1 style='font-size:2rem;color:red;'>Accesso negato</h1>";
         }
-        
-        
-
     ?>
     
 </body>
