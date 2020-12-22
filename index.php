@@ -9,11 +9,16 @@
         body {
             width: 100vw;
             height: 100vh;
-            background: #FBCEB1;
+            background: #00FFFF;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+        }
+        p{
+            color: #CCFF00;
+            font-size:2rem;
         }
     </style>
 
@@ -37,11 +42,15 @@
 
     ?>
 
+    <p>Il nome che hai inserito è: <?php echo $name ?></p>
+    <p>La mail che hai inserito è: <?php echo $mail ?></p>
+    <p>L'età che hai inserito è: <?php echo $age ?></p>
+
     <?php
         if (strlen($name) > 3 && strpos ($mail, '@') !== false && strpos ($mail, '.') !== false && is_numeric($age) == true) {
-            echo "<h1 style='font-size:2rem;color:green;'>Accesso consentito</h1>";
+            echo "<h1 style='font-size:4rem;color:green;'>Accesso consentito</h1>";
         } else {
-            echo "<h1 style='font-size:2rem;color:red;'>Accesso negato</h1>";
+            echo "<h1 style='font-size:4rem;color:red;'>Accesso negato</h1>";
         }
     ?>
     
