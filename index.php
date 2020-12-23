@@ -47,7 +47,7 @@
     <p>L'età che hai inserito è: <?php echo $age ?></p>
 
     <?php
-        if (strlen($name) > 3 && strpos ($mail, '@') !== false && strpos ($mail, '.') !== false && is_numeric($age) == true) {
+        if ($nameV && $mailV && $ageV) {
             echo "<h1 style='font-size:4rem;color:green;'>Accesso consentito</h1>";
         } else {
             echo "<h1 style='font-size:4rem;color:red;'>Accesso negato</h1>";
